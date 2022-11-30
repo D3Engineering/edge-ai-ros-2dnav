@@ -1,0 +1,7 @@
+<launch>
+    <include ns="2dnav" file="$(find d3_motorctl)/launch/motor.launch"/>
+    <include ns="2dnav" file="$(find d3_motorctl)/launch/odom.launch"/>
+    <!--<include ns="2dnav" file="$(find d3_apriltag)/launch/apriltag.launch"/>-->
+    <node pkg="tf" type="static_transform_publisher" name="map_to_odom" args="0 0 0 0 0 0 map odom 100" />
+
+</launch>

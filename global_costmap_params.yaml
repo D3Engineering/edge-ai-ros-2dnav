@@ -7,5 +7,3 @@ global_costmap:
   robot_base_frame: base_link
   update_frequency: 5.0
   resolution: 0.05
-  # STB - we should try removing this as we added it before we had static broadcast tranforms
-  #transform_tolerance: 60

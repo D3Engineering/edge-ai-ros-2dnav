@@ -1,24 +1,24 @@
 obstacle_range: 2.5
 raytrace_range: 3.0
-#footprint: [[0.30, 0.225], [-0.15, 0.225], [-0.15, -0.225], [0.30, -0.225]]
-footprint: [[0.35, 0.275], [-0.15, 0.275], [-0.15, -0.275], [0.35, -0.275]]
+footprint: [[0.30, 0.225], [-0.15, 0.225], [-0.15, -0.225], [0.30, -0.225]]
+# Enlarged footprint to make obstacle avoidance work
+#footprint: [[0.35, 0.275], [-0.15, 0.275], [-0.15, -0.275], [0.35, -0.275]]
 
-#robot_radius: ir_of_robot
+
 #inflation_radius: 0.15
-#inscribed_radius: 0.15
-#circumscribed_radius: 0.30
 
+# Obstacle detection - removed because unused
 #laser_scan_sensor: {sensor_frame: frame_name, data_type: LaserScan, topic: topic_name, marking: true, clearing: true}
-plugins:
-  - {name: static_layer, type: "costmap_2d::StaticLayer"}
-  - {name: obstacle_layer, type: "costmap_2d::ObstacleLayer"}
-  - {name: inflation_layer, type: "costmap_2d::InflationLayer"}
+#plugins:
+#  - {name: static_layer, type: "costmap_2d::StaticLayer"}
+#  - {name: obstacle_layer, type: "costmap_2d::ObstacleLayer"}
+#  - {name: inflation_layer, type: "costmap_2d::InflationLayer"}
 
-obstacle_layer:
-  observation_sources: frontradar, leftradar, rightradar
-  frontradar: {sensor_frame: front_radar, data_type: PointCloud2, topic: /front/ti_mmwave/radar_scan_pcl, marking: true, clearing: true, observation_persistence: 2.0}
-  leftradar:  {sensor_frame: left_radar,  data_type: PointCloud2, topic: /left/ti_mmwave/radar_scan_pcl,  marking: true, clearing: true, observation_persistence: 2.0}
-  rightradar: {sensor_frame: right_radar, data_type: PointCloud2, topic: /right/ti_mmwave/radar_scan_pcl, marking: true, clearing: true, observation_persistence: 2.0}
+#obstacle_layer:
+#  observation_sources: frontradar, leftradar, rightradar
+#  frontradar: {sensor_frame: front_radar, data_type: PointCloud2, topic: /front/ti_mmwave/radar_scan_pcl, marking: true, clearing: true, observation_persistence: 2.0}
+#  leftradar:  {sensor_frame: left_radar,  data_type: PointCloud2, topic: /left/ti_mmwave/radar_scan_pcl,  marking: true, clearing: true, observation_persistence: 2.0}
+#  rightradar: {sensor_frame: right_radar, data_type: PointCloud2, topic: /right/ti_mmwave/radar_scan_pcl, marking: true, clearing: true, observation_persistence: 2.0}
 
 #inflation_layer:
 #  inflation_radius: 1.0

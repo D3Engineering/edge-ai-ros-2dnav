@@ -12,7 +12,7 @@ local_costmap:
   #always_send_full_costmap: true
   resolution: 0.05
   inflation_radius: 0.67
-# This stuff is already in the common params
+# Remove obstacle avoidance for now
 #  plugins:
 #    - {name: obstacle_layer, type: "costmap_2d::ObstacleLayer"}
 #    - {name: inflation_layer, type: "costmap_2d::InflationLayer"}
